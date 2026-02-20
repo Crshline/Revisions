@@ -1,0 +1,21 @@
+char ft_strchr(char *s, int c) -> char *ft_strchr(char *s, int c) 
+
+size_t size1 = s1 ? ft_strlen(s1) : 0; -> size_t size1 = (*s1) ? ft_strlen(*s1) : 0;
+
+int str_append_str(char **s1, char s2) -> int str_append_str(char **s1, char *s2)
+
+void ft_memmove(void *dest, const void *src, size_t n) -> void *ft_memmove(void *dest, const void *src, size_t n)
+
+((char *)dest)[i] = ((char )src)[i]; -> ((char *)dest)[i] = ((char *)src)[i];
+
+char get_next_line(int fd) -> char *get_next_line(int fd)
+
+static char b[BUFFER_SIZE + 1] = () ; -> static char b[BUFFER_SIZE + 1] = {0} ;
+
+char *tmp = ft_strchr(b, ''); -> char *tmp = ft_strchr(b, '\n');
+
+b[0] = ''; -> b[0] = '\0';
+
+tmp = ft_strchr(b, ''); -> tmp = ft_strchr(b, '\n');
+
+b[0] = ''; -> b[0] = '\0';
