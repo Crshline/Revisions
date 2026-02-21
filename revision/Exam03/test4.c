@@ -1,19 +1,18 @@
-#include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 void	permutation(char *str, int start, int len)
 {
-	int i;
 	char c;
-
 	if(start == len - 1)
 	{
 		write(1, str, len);
 		write(1, "\n", 1);
 		return;
 	}
-	for(i = start; i < len; i++)
+	for(int i = start; i < len; i++)
 	{
 		c = str[start];
 		str[start] = str[i];

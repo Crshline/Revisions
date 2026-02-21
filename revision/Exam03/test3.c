@@ -1,12 +1,11 @@
 // #include <broken_gnl.h>
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 42
 #endif
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 char *ft_strchr(char *s, int c)
 {
