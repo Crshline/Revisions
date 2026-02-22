@@ -15,7 +15,7 @@ int balanced(char *str)
 	return(balance == 0);
 }
 
-void	find_solutions(char *str, int index)
+void	find_solutions(char *str, int index, int removed, int)
 {
 	if(str[index] == '\0')
 	{
