@@ -12,9 +12,8 @@ void	find_subsets(int target, int *set, int set_len, int *subset, int subset_len
 				printf(" ");
 		}
 		printf("\n");
-		return;
 	}
-	if(target < 0 || index >= set_len)
+	if(index >= set_len)
 		return;
 	for(int i = index; i < set_len; i++)
 	{
@@ -27,11 +26,9 @@ int main(int ac, char **av)
 {
 	if(ac < 2)
 		return(1);
-
 	int size = ac - 2;
 	int set[size];
 	int subset[size];
-
 	for(int i = 0; i < size; i++)
 		set[i] = atoi(av[i + 2]);
 	find_subsets(atoi(av[1]), set, size, subset, 0, 0);
