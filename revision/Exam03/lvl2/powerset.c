@@ -27,10 +27,24 @@ int main(int ac, char **av)
 	if(ac < 2)
 		return(1);
 	int size = ac - 2;
-	int set[size];
-	int subset[size];
-	for(int i = 0; i < size; i++)
-		set[i] = atoi(av[i + 2]);
+	int *set = NULL;
+	int *subset = NULL;
+	if(size > 0)
+	{
+		set = malloc(sizeof(int) * size);
+		subset = malloc(sizeof(int) * size);
+
+		if(!set || !subset)
+		{
+			free(set);
+			free(subset);
+			return(1);
+		}
+		for(int i = 0; i < size; i++)
+			set[i] = atoi(av[i + 2]);
+	}
 	find_subsets(atoi(av[1]), set, size, subset, 0, 0);
+	free(set);
+	free(subset);
 	return(0);
 }
