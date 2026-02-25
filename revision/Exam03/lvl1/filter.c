@@ -36,7 +36,7 @@ int main(int ac, char **av)
 	while((j = read(0, buf + i, 1024)) > 0)
 	{
 		i += j;
-		if(i + cap > 1024)
+		if(i + 1024 > cap)
 		{
 			cap *= 2;
 			char *tmp = realloc(buf, cap);
