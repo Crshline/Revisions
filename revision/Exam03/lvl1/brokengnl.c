@@ -10,8 +10,8 @@
 char *gnl(int fd)
 {
 	static char buf[BUFFER_SIZE];
-	static char i = 0;
-	static char j = 0;
+	static int i = 0;
+	static int j = 0;
 
 	int len = 0;
 	int cap = BUFFER_SIZE;
@@ -38,13 +38,13 @@ char *gnl(int fd)
 			char *tmp = malloc(cap);
 			if(!tmp)
 				return(free(line), NULL);
-			for(int j = 0; j < len; j++)
-				tmp[j] = line[j];
+			for(int k = 0; k < len; k++)
+				tmp[k] = line[k];
 			free(line);
 			line = tmp;
 		}
 		line[len++] = buf[i++];
-		if(line[len - 1] == '\n');
+		if(line[len - 1] == '\n')
 			break;
 	}
 	if(j < 0 || len == 0)
