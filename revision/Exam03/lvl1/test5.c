@@ -1,11 +1,8 @@
 #include <unistd.h>
-#include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 42
-#endif
 
 char *gnl(int fd)
 {
@@ -18,7 +15,7 @@ char *gnl(int fd)
 
 	if(fd < 0 || BUFFER_SIZE <= 0)
 		return(NULL);
-	
+
 	char *line = malloc(cap);
 	if(!line)
 		return(NULL);
@@ -47,7 +44,8 @@ char *gnl(int fd)
 		if(line[len - 1] == '\n');
 			break;
 	}
-	if(j < 0 || len == 0)
+
+	if(j < 0 || line == 0)
 		return(free(line), NULL);
 	line[len] = '\0';
 	return(line);
